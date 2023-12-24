@@ -1,0 +1,29 @@
+[gd_scene load_steps=8 format=3 uid="uid://bv4dyf5c13d8s"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_5yhft"]
+[ext_resource type="Texture2D" uid="uid://dhsennia2rtao" path="res://icon.svg" id="2_358dk"]
+[ext_resource type="Script" path="res://Terrain Falling.gd" id="3_qmlvf"]
+[ext_resource type="Texture2D" uid="uid://ctirdv1t0ctd3" path="res://assets/4x4-tile.png" id="4_bwreq"]
+[ext_resource type="Script" path="res://terrain_object.gd" id="4_kfhjk"]
+[ext_resource type="Script" path="res://Terrain manager.gd" id="5_k2cok"]
+[ext_resource type="Texture2D" uid="uid://og1sh4s7qmy2" path="res://assets/4x4-terrain-drop.png" id="6_jvpex"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_5yhft")
+terrain_texture = ExtResource("2_358dk")
+
+[node name="Terrain Falling" type="Node2D" parent="."]
+script = ExtResource("3_qmlvf")
+terrain_texture = ExtResource("4_bwreq")
+physic_body_script = ExtResource("4_kfhjk")
+
+[node name="Terrain manager" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_k2cok")
+heigth_texture = ExtResource("6_jvpex")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 560)
+texture = ExtResource("6_jvpex")
+centered = false
+hframes = 21
