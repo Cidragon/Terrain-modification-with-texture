@@ -7,5 +7,4 @@ func _process(delta: float) -> void:
 		queue_free()
 
 func get_terrain_index() -> int:
-	print(position.x / (Main.TEXTURE_SIZE * 2))
-	return position.x / (Main.TEXTURE_SIZE * 2)
+	return position.x / (Main.TEXTURE_SIZE)
