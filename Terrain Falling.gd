@@ -4,7 +4,7 @@ extends Node2D
 @export var physic_body_script : Script
 
 func _process(delta: float) -> void:
-	var random_index : int = get_random_value(Main.TERRAIN_MAX_WIDTH)
+	var random_index : int = get_random_value(Main.TERRAIN_MAX_WIDTH - 1)
 	
 	var physics_body : RigidBody2D = RigidBody2D.new()
 	physics_body.set_script(physic_body_script)
@@ -20,6 +20,6 @@ func _process(delta: float) -> void:
 func get_random_value(max_value : int) -> int:
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
-	return rng.randi_range(0, max_value - 1)
+	return rng.randi_range(0, max_value)
 
 

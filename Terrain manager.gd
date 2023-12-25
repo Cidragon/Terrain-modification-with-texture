@@ -16,9 +16,8 @@ func update_terrain(index : int, value : int) -> void:
 		
 		if random_value == 1:
 			heigth_sprites[index].flip_h = true
-			return
-		
-		heigth_sprites[index].flip_h = false
+		else:
+			heigth_sprites[index].flip_h = false
 	
 	heigth_sprites[index].frame = value
 	pass
@@ -28,7 +27,7 @@ func set_terrain_width(width : int) -> void:
 		var new_sprite : Sprite2D =  Sprite2D.new()
 		new_sprite.texture = heigth_texture
 		new_sprite.centered = false
-		new_sprite.position = Vector2(i * Main.TEXTURE_SIZE, 640 - heigth_texture.get_height())
+		new_sprite.position = Vector2(i * Main.TEXTURE_SIZE * 2, 640 - heigth_texture.get_height())
 		new_sprite.hframes = 21
 		new_sprite.frame = 0
 		

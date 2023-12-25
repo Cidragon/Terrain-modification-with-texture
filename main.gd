@@ -19,6 +19,6 @@ func _ready() -> void:
 
 func add_value_to_terrain_by_index(index : int) -> void:
 	terrain_heigth[index] = min(terrain_heigth[index] + 1, TERRAIN_MAX_HEIGTH)
-	#print(terrain_heigth)
+	print(terrain_heigth)
 	terrain_manager.update_terrain(index, terrain_heigth[index])
 
